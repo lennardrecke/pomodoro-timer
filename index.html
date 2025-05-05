@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neobrutalism Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="pomodoro-timer">
+        <div class="header">
+          <h1>POMODORO</h1>
+          <button id="settings-btn" class="settings-btn">️⚙</button>
+        </div>
+
+        <div class="timer-display">
+          <div class="progress-ring">
+            <span id="time-left" class="time-left">25:00</span>
+          </div>
+        </div>
+
+        <div class="mode-buttons">
+          <button id="work-btn" class="mode-btn active">Work</button>
+          <button id="short-break-btn" class="mode-btn">Short Break</button>
+          <button id="long-break-btn" class="mode-btn">Long Break</button>
+        </div>
+
+        <div class="control-buttons">
+          <button id="toggle-btn" class="control-btn play-btn">▶</button>
+          <button id="reset-btn" class="control-btn reset-btn">↻</button>
+        </div>
+
+        <div class="sessions-counter">
+          <div class="sessions-badge">
+            Sessions: <span id="sessions-count">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="settings-modal" class="settings-modal hidden">
+        <div class="settings-content">
+          <div class="settings-header">
+            <h2>SETTINGS</h2>
+            <button id="close-settings" class="close-btn">✕</button>
+          </div>
+          <form id="settings-form">
+            <div class="form-group">
+              <label for="work-time">Work Time (minutes)</label>
+              <input type="number" id="work-time" min="1" max="60" value="25" />
+            </div>
+            <div class="form-group">
+              <label for="short-break-time">Short Break (minutes)</label>
+              <input
+                type="number"
+                id="short-break-time"
+                min="1"
+                max="30"
+                value="5" />
+            </div>
+            <div class="form-group">
+              <label for="long-break-time">Long Break (minutes)</label>
+              <input
+                type="number"
+                id="long-break-time"
+                min="1"
+                max="60"
+                value="15" />
+            </div>
+            <div class="form-group">
+              <label for="sessions-before-long-break"
+                >Sessions Before Long Break</label
+              >
+              <input
+                type="number"
+                id="sessions-before-long-break"
+                min="1"
+                max="10"
+                value="4" />
+            </div>
+            <button type="submit" class="save-btn">SAVE SETTINGS</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bell-sound" src="sounds/bell.mp3"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
